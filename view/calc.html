@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head lang="hu">
+		<link rel="icon" href="../img/vapo.png">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Kalkulátor</title>
+		<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="px-3 py-2 bg-dark text-white">
+			<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+				<div class="container">
+					<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+						<span class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"></span>
+						<ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+							<li>
+								<a href="../index.html" class="nav-link text-white">
+									<img src="../svg/house.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Főoldal
+								</a>
+							</li>
+							<li>
+								<a href="msgboard.html" class="nav-link text-white">
+									<img src="../svg/msg.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Üzenőfal
+								</a>
+							</li>
+							<li>
+								<a href="schedule.html" class="nav-link text-white">
+									<img src="../svg/calendar.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Órarend
+								</a>
+							</li>
+							<li>
+								<a href="notes.html" class="nav-link text-white">
+									<img src="../svg/note.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Jegyzetek
+								</a>
+							</li>
+							<li>
+								<a href="playlist.html" class="nav-link text-white">
+									<img src="../svg/spotify.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Spotify playlist
+								</a>
+							</li>
+							<li>
+								<a href="https://github.com/solymosi/npu" target="_blank" rel="noopener noreferrer nofollow" class="nav-link text-white">
+									<img src="../svg/powerup.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									PowerUp!
+								</a>
+							</li>
+							<li>
+								<a href="https://drive.google.com/drive/folders/18zKFkxjT7kj2Neu6nV7XDmcroiy_T_m7?usp=sharing" 
+								target="_blank" rel="noopener noreferrer nofollow" class="nav-link text-white">
+									<img src="../svg/drive.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Drive
+								</a>
+							</li>
+							<li>
+								<a href="#" class="nav-link text-secondary" aria-current="page">
+									<img src="../svg/calc.svg" class="bi d-block mx-auto mb-1" id="menu-icon" width="24" height="24"></img>
+									Kalkulátor
+								</a>
+							</li>
+						</ul>    
+					</div>
+				</div>
+			</header>
+		</div>
+		<div class="container">
+			<article class="my-3" id="validation">
+				<div>
+					<div class="bd-example">
+						<form target="_parent" id="myForm" method="post" class="row g-3">
+							<div class="col-md-4">
+								<label for="validationServer01" class="form-label">Tárgy neve</label>
+								<input type="text" class="form-control" id="validationServer01" placeholder="Tárgy neve" id="Lname" name="Name" />
+							</div>
+							<div class="col-md-4">
+								<label for="validationServer01" class="form-label">Kredit</label>
+								<input type="number" class="form-control" id="validationServer01" placeholder="Kredit" min="2" max="10" id="crdt" name="Credit" required/>
+							</div>
+							<div class="col-md-4">
+								<label for="validationServer01" class="form-label">Érdemjegy</label>
+								<input type="number" class="form-control" id="validationServer01" placeholder="Érdemjegy" min="1" max="5" id="grd" name="Grade" required/>
+							</div>
+							<div class="col-12">
+								<input type="button" class="btn btn-primary" id="submit" value="Hozzáad" name="submit"/>
+								<input type="button" class="btn btn-danger" id="dlt" value="Töröl" name="dlt"/>
+							</div>
+						</form>
+					</div>
+				</div>
+			</article>
+			<table class="table table-success table-striped" id="grades">
+				<thead>
+					<tr>
+					  <td>Tárgy neve</td>
+					  <td>Kredit</td>
+					  <td>Érdemjegy</td>
+					</tr>
+				</thead>
+				<tbody id="details">
+				</tbody>
+			</table>
+			<article class="my-3" id="validation">
+				<div>
+					<div class="bd-example">
+						<form class="row g-3">
+							<div class="col-md-4">
+								<input class="form-control" type="text" value="Átlag" aria-label="readonly input example" id="average" readonly>
+							</div>
+							<div class="col-12">
+								<input type="button" class="btn btn-primary" id="calcbtn" value="Számol" name="calcbtn">
+							</div>
+						</form>
+					</div>
+				</div>
+			</article>
+		</div>
+		<script src="../js/jquery-3.6.0.min.js"></script>
+		<script src="../js/script.js"></script>
+		<script>
+			$('#calcbtn').on('click',function(){
+				var table = document.getElementById("grades"), sum = 0, proSum = 0, avg;
+				console.log(table);
+				for (var index = 1; index < table.rows.length; index++) {
+					sum = sum + parseInt(table.rows[index].cells[1].innerHTML);
+					proSum = proSum + parseInt(table.rows[index].cells[1].innerHTML) * parseInt(table.rows[index].cells[2].innerHTML);       
+				}
+				avg = proSum / sum;
+				console.log(avg);
+				var result = document.getElementById("average"); 
+				result.value = avg;
+			});
+		</script>
+	</body>
+</html>

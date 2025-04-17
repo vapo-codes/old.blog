@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+	<head lang="hu">
+		<link rel="icon" href="../../img/vapo.png">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Valószínűségszámítás és statisztika</title>
+		<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+		<link href="../../css/bootstrap.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="px-3 py-2 bg-dark text-white">
+			<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+				<div class="container">
+					<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+						<span class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+						</span>
+						<ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+							<li>
+								<a href="../../index.html" class="nav-link text-white" >
+									<img src="../../svg/house.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Főoldal
+								</a>
+							</li>
+							<li>
+								<a href="../msgboard.html"class="nav-link text-white" aria-current="page">
+									<img src="../../svg/msg.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Üzenőfal
+								</a>
+							</li>
+							<li>
+								<a href="../schedule.html" class="nav-link text-white">
+									<img src="../../svg/calendar.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Órarend
+								</a>
+							</li>
+							<li>
+								<a href="../notes.html" class="nav-link text-secondary" aria-current="page">
+									<img src="../../svg/note.svg" class="bi d-block mx-auto mb-1" id="menu-icon" width="24" height="24"></img>
+									Jegyzetek
+								</a>
+							</li>
+							<li>
+								<a href="../playlist.html" class="nav-link text-white">
+									<img src="../../svg/spotify.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Spotify playlist
+								</a>
+							</li>
+							<li>
+								<a href="https://github.com/solymosi/npu" target="_blank" rel="noopener noreferrer nofollow" class="nav-link text-white">
+									<img src="../../svg/powerup.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									PowerUp!
+								</a>
+							</li>
+							<li>
+								<a href="https://drive.google.com/drive/folders/18zKFkxjT7kj2Neu6nV7XDmcroiy_T_m7?usp=sharing" 
+								target="_blank" rel="noopener noreferrer nofollow" class="nav-link text-white">
+									<img src="../../svg/drive.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Drive
+								</a>
+							</li>
+							<li>
+								<a href="../calc.html" class="nav-link text-white">
+									<img src="../../svg/calc.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Kalkulátor
+								</a>
+							</li>
+						</ul>    
+					</div>
+				</div>
+			</header>
+		</div>
+		<div class="container">
+			<div class="tab-content">
+				<div id="first" data-tab-content class="active">
+					<table class="table table-dark table-striped mt-3">
+						<thead>
+							<tr>
+								<td>Fájlkezelő parancsok</td>
+								<td>Magyarázat</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>cd (change dir)</td>
+								<td>Katalógus váltás</td>
+							</tr>
+							<tr>
+								<td>pwd (print w. dir.)</td>
+								<td>Munkakatalógus kiírása</td>
+							</tr>
+							<tr>
+								<td>mkdir (make dir.)</td>
+								<td>Katalógus létrehozása</td>
+							</tr>
+							<tr>
+								<td>rmdir (remove dir.)</td>
+								<td>Katalógus törlése</td>
+							</tr>
+							<tr>
+								<td>ls (list)</td>
+								<td>Katalógus lista</td>
+							</tr>
+							<tr>
+								<td>cp (copy)</td>
+								<td>Fájl(ok) másolása</td>
+							</tr>
+							<tr>
+								<td>rm (remove)</td>
+								<td>Fájl(ok) törlése</td>
+							</tr>
+							<tr>
+								<td>mv (move)</td>
+								<td>Fájlok áthelyezése</td>
+							</tr>
+							<tr>
+								<td>ln (link)</td>
+								<td>Fájl hivatkozás létrehozása</td>
+							</tr>
+							<tr>
+								<td>ln -s</td>
+								<td>Szimbolikus link létrehozása</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="alert alert-warning">
+						<p>
+							Shell: Unix terminológia - az oprendszernek kiadott parancsokat beolvasó és értelmező programok.
+							Ez alapvető jellegzetessége minden UNIX rendszernek. Oka a rendszer felépítése, a rendszermag és köréje csoportosulú alkalmazások közötti
+						</p>
+					 </div>
+				</div>
+				<table class="table table-dark table-striped mt-3">
+					<thead>
+						<tr>
+							<td>Rendszer állapotával kapcsolatos parancsok</td>
+							<td>Magyarázat</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>who</td>
+							<td>Aktuális felhasználók</td>
+						</tr>
+						<tr>
+							<td>ps</td>
+							<td>Futó processzek</td>
+						</tr>
+						<tr>
+						  <td>kill</td>
+						  <td>Szignál küldése</td>
+						</tr>
+						<tr>
+							<td>jobs</td>
+							<td>Háttérben lévő feladatok listája</td>
+						</tr>
+						<tr>
+							<td>date</td>
+							<td>Dátum</td>
+						</tr>
+						<tr>
+							<td>top</td>
+							<td>Leg folyamatok</td>
+						</tr>
+						<tr>
+							<td>du</td>
+							<td>Diszk használat</td>
+						</tr>
+						<tr>
+							<td>df</td>
+							<td>Szabad diszkterület</td>
+						</tr>
+						<tr>
+							<td>quota</td>
+							<td>Diszk kvóta ellenőrzés</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="table table-dark table-striped mt-3">
+					<thead>
+						<tr>
+							<td>Rendszer állapotával kapcsolatos parancsok</td>
+							<td>Magyarázat</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>$#</td>
+							<td>Parancssori paraméterek száma</td>
+						</tr>
+						<tr>
+							<td>$n</td>
+							<td>Az n-edik parancssori paraméter értéke (max 9)</td>
+						</tr>
+						<tr>
+							<td>$0</td>
+							<td>A pillanatnyi héjprogram neve</td>
+						</tr>
+						<tr>
+							<td>$$</td>
+							<td>Futó program azonosítója</td>
+						</tr>
+						<tr>
+							<td>$?</td>
+							<td>Exit státusz</td>
+						</tr>
+						<tr>
+							<td>$-</td>
+							<td>A héjprogramot végrehajtó héjnak átadott kapcsolók</td>
+						</tr>
+						<tr>
+							<td>$*</td>
+							<td>Valamennyi parancssori paraméter egyben, egyetlen karakterláncként ($1 $2... $9)</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<nav aria-label="Standard pagination example" id="navN">
+				<ul class="pagination">
+					<li class="page-item active tab" data-tab-target="#first"><a class="page-link" href="#">1</a></li>
+					<li class="page-item tab" data-tab-target="#second"><a class="page-link" href="#">2</a></li>
+					<li class="page-item tab" data-tab-target="#third"><a class="page-link" href="#">3</a></li>
+					<li class="page-item tab" data-tab-target="#forth"><a class="page-link" href="#">4</a></li>
+				</ul>
+			</nav>
+		</div>
+		<script>
+			const tabs = document.querySelectorAll('[data-tab-target]')
+			const tabContents = document.querySelectorAll('[data-tab-content]')
+			let list = document.querySelectorAll('#navN ul li');
+
+			tabs.forEach(tab => {
+				tab.addEventListener('click', () => {
+					const target = document.querySelector(tab.dataset.tabTarget)
+					tabContents.forEach(tabContent => {
+						tabContent.classList.remove('active')
+					})
+					target.classList.add('active')
+				})
+			});
+			function activeLink(){
+				list.forEach((item) => item.classList.remove('active'));
+				this.classList.add('active');
+			}
+			list.forEach((item) =>
+			item.addEventListener('click', activeLink));
+			var modal = document.getElementById("myModal");
+
+			// Get the image and insert it inside the modal - use its "alt" text as a caption
+			var img = document.getElementById("abra");
+			var modalImg = document.getElementById("img01");
+			var captionText = document.getElementById("caption");
+			img.onclick = function(){
+				modal.style.display = "block";
+				modalImg.src = this.src;
+				captionText.innerHTML = this.alt;
+			}
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() { 
+				modal.style.display = "none";
+			}
+		</script>
+	</body>
+</html>

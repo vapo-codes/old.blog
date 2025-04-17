@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+	<head lang="hu">
+		<link rel="icon" href="../../img/vapo.png">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Valószínűségszámítás és statisztika</title>
+		<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+		<link href="../../css/bootstrap.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="px-3 py-2 bg-dark text-white">
+			<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+				<div class="container">
+					<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+						<span class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+						</span>
+						<ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+							<li>
+								<a href="../../index.html" class="nav-link text-white" >
+									<img src="../../svg/house.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Főoldal
+								</a>
+							</li>
+							<li>
+								<a href="../msgboard.html"class="nav-link text-white" aria-current="page">
+									<img src="../../svg/msg.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Üzenőfal
+								</a>
+							</li>
+							<li>
+								<a href="../schedule.html" class="nav-link text-white">
+									<img src="../../svg/calendar.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Órarend
+								</a>
+							</li>
+							<li>
+								<a href="../notes.html" class="nav-link text-secondary" aria-current="page">
+									<img src="../../svg/note.svg" class="bi d-block mx-auto mb-1" id="menu-icon" width="24" height="24"></img>
+									Jegyzetek
+								</a>
+							</li>
+							<li>
+								<a href="../playlist.html" class="nav-link text-white">
+									<img src="../../svg/spotify.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Spotify playlist
+								</a>
+							</li>
+							<li>
+								<a href="https://github.com/solymosi/npu" target="_blank" rel="noopener noreferrer nofollow" class="nav-link text-white">
+									<img src="../../svg/powerup.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									PowerUp!
+								</a>
+							</li>
+							<li>
+								<a href="https://drive.google.com/drive/folders/18zKFkxjT7kj2Neu6nV7XDmcroiy_T_m7?usp=sharing" 
+								target="_blank" rel="noopener noreferrer nofollow" class="nav-link text-white">
+									<img src="../../svg/drive.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Drive
+								</a>
+							</li>
+							<li>
+								<a href="../calc.html" class="nav-link text-white">
+									<img src="../../svg/calc.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Kalkulátor
+								</a>
+							</li>
+						</ul>    
+					</div>
+				</div>
+			</header>
+		</div>
+		<div class="container">
+			<div class="tab-content">
+				<div id="first" data-tab-content class="active">
+					<h2 class="blog-post-title">Kombinatorika, eseményalgebra</h2>
+					<h6 class="blog-post-title">Valószínűség három módja</h6>
+					<ul>
+						<li>Kombinatorikus valószínűség</li>
+						<li>Klasszikus valószínűség</li>
+						<li>Elméleti valószínűség</li>
+					</ul>
+					<h6 class="blog-post-title">Valószínűségi változó</h6>
+					<ul>
+						<li>Diszkrét val. változó</li>
+						<li>Folytonos val. változó</li>
+					</ul>
+					<h6 class="blog-post-title">Valószínűség eloszlás</h6>
+					<ul>
+						<li>
+							Nevezetes eloszlások
+							<ul>
+								<li>Diszkrét</li>
+								<li>Folytonos</li>
+							</ul>
+						</li>
+					</ul>
+					<h6 class="blog-post-title">Matematika stat. alapjai</h6>
+					<ul>
+						<li>Fogalmak  |  Statisztikai próbák</li>
+						<li>Statisztikák  |  Hipotézisvizsgálat</li>
+					</ul>
+					<h5 class="blog-post-title">Eseményalgebra</h5>
+					<div class="alert alert-danger">
+						<p>
+							<u>Definíció:</u>
+							<strong> Véletlen tömegjelenségnek nevezzük azokat a kísérleteket, megjelenítéseket, amelyek bekövetkeznek, mint esemény.</strong><br>
+							- Akaratunktól független; időben és térben, valamint korlátlan számban megismételhetőek<br>
+							Ilyen a gyakorlatban nincs, csak elméletben létezik.<br>
+							<strong>Véletlen tömegjelenségek valamely kimenetelét eseménynek nevezzük.</strong><br>
+							Jelölés: A, B, C, A<sub>1</sub>, A<sub>2</sub>...
+						</p>
+					</div>
+					<h6 class="blog-post-title">Kitüntetett események</h6>
+					<ul>
+						<li>
+							Biztos események
+							<p>
+							  Jele: I<br>
+							  Kísérlet vagy megfigyelés során mindig bekövetkezik.<br>
+							  Pl.: I - Dobókockával dobott érték kisebb, mint 122.
+							</p>
+						</li>
+						<li>
+							Lehetetlen események
+							<p>
+								Jele: Ø<br>
+								Kísérlet vagy megfigyelés során sohasem következik be.<br>
+								Pl.: Dobókockával dobott érték -3.
+							</p>
+						</li>
+						<p>
+							További példák eseményekre:<br>
+							'A' esemény (3-nál nagyobbat dobok)<br>
+							'A<sub>1</sub>' esemény (1-est dobok)
+						</p>
+					</ul>
+				</div>
+				<div id="second" data-tab-content>
+					<h2 class="blog-post-title">Kombinatorikai ágrajz</h2>
+					<img src="../../img/val-stat.jpg" class="img-fluid" title="Kombinatorika" alt="Kombinatorika" id="abra">
+					<div id="myModal" class="modal">
+						<span class="close">&times;</span>
+						<img class="modal-content" id="img01">
+						<div id="caption"></div>
+					</div>
+					<div class="alert alert-info">
+						<p>n!=1*2*3...*n=π<sub>i=1</sub><sup>n</sup>i</p>
+						<p>1+2+3...+n=∑<sub>i=1</sub><sup>n</sup>i</p>
+						<p>0!=1</p>
+						<p>1!=1</p>
+					</div>
+					<div class="alert alert-warning">
+					  <p><u>Permutáció (cserélgetni, rostálni):</u> Rendezett elemek sorában <strong>két szomszédos</strong> elem cseréje <strong>elemi permutáció</strong>.</p>
+					  <p>N elem permutációinak száma <strong>n!</strong>. Megegyezik az n elem összes különböző rendezett állapotának számával.</p>
+					</div>
+					<div>
+						<h6 class="blog-post-title">Példák</h6>
+						<p>MAMA -> 4!/(2!*2!)=6</p>
+						<p>PEST -> 4!=24</p>
+						<p>7 malacból 3-at levágnak -> 7!/4!=5*6*7</p>
+						<p>7 malac és 3 etetés -> 7<sup>3</sup>=7*7*7</p>
+					</div>
+				</div>
+				<div id="third" data-tab-content>
+				<div>
+					<p>A bálon 20 emberből mindig 2-2 táncol egymással.</p>
+					<p>V<sub>n</sub><sup>k</sup>=V<sub>20</sub><sup>2</sup>=20!/18!=20*19=380</p>
+				</div>
+				<div class="alert alert-warning">
+					<p>
+						<u>Tétel:</u> n alatt az 1 -> n | n alatt a 0 -> 1 | n alatt az n -> 1 | n alatt az n-1 -> n
+					</p>
+				</div>
+					<div>
+						<h6 class="blog-post-title">Pascal-háromszög</h6>
+						<div>
+							<img src="../../img/pascals-triangle.svg" title="Pascal-háromszög" alt="Pascal-háromszög">
+							<p><i>Forrás: mathsisfun.com</i></p>
+						</div>
+					</div>
+					<div class="alert alert-secondary">
+						<p>(a+b)<sup>0</sup>=1</p>
+						<p>(a+b)<sup>1</sup>=a+b</p>
+						<p>(a+b)<sup>2</sup>=a<sup>2</sup>+2ab+b<sup>2</sup></p>
+						<p>(a+b)<sup>3</sup>=a<sup>3</sup>+3a<sup>2</sup>b+3ab<sup>2</sup>+b<sup>3</sup></p>
+						<p>(a+b)<sup>5</sup>=a<sup>5</sup>+5a<sup>4</sup>b+10a<sup>3</sup>b<sup>2</sup>+5ab<sup>4</sup>+b<sup>5</sup></p>
+					</div>
+				</div>
+				<div id="forth" class="mt-3" data-tab-content>
+					<h2>ZH minta definíciók</h2>
+					<div class="alert alert-danger">
+						<h6 class="blog-post-title">Ismétléses permutáció fogalma, képlete</h6>
+						<p>Rendezett elemek sorában két szomszédos elem cseréje elemi permutáció.<br>Vannak azonos elemek, n=k<sub>1</sub>+k<sub>2</sub>+...+k<sub>n</sub><br>n elem k<sub>1</sub>, k<sub>2</sub>...k<sub>n</sub>-ed osztályú ismétléses permutációja. (Képlet: lásd 2. oldal ábra)</p>
+					</div>
+					<div class="alert alert-danger">
+						<h6 class="blog-post-title">Binomiális tétel</h6>
+						<img src="../../svg/binom.svg"></img>
+					</div>
+					<div class="alert alert-danger">
+						<h6 class="blog-post-title">Események függetlenségének meghatározása</h6>
+						<p>Az A és B eseményeket, amelyek ugyanazon eseménytérből valók, független eseménynek nevezzük, ha P(A*B)=P(A)*P(B)</p>
+					</div>
+					<div class="alert alert-danger">
+						<h6 class="blog-post-title">Kolmogorov-féle axiómák</h6>
+						<ol>
+							<li>Valószínűség számelméleti függvény P:A -> <strong>R</strong>; P(A)</li>
+							<li>P(Ø)=0</li>
+							<li>P(A)<=1</li>
+							<li>'A' és 'B' esemény kizárja egymást A*B=Ø<br>P(A+B)=P(A)+P(B)</li>
+							<li>P(A<sup>komplementer</sup>)=1-P(A)</li>
+						</ol>
+					</div>
+					<div class="alert alert-danger">
+						<h6 class="blog-post-title">Teljes esemény</h6>
+						<p>{A<sub>1</sub>+A<sub>2</sub>+...+A<sub>n</sub>}, ha páronként kizárják egymást és összegük a biztos esemény. A<sub>1</sub>+A<sub>2</sub>+...+A<sub>i</sub>=I<br>A<sub>i</sub>,A<sub>j</sub>=Ø</p>
+					</div>
+					<div class="alert alert-danger">
+						<h6 class="blog-post-title">Fontosak</h6>
+						<p>0!=1; 1!=1;</p>
+						<p>n alatt 1 -> n; n alatt 0 -> 1; n alatt n -> 1; n alatt n-1 -> n</p>
+					</div>
+					<div class="alert alert-danger">
+						<h6 class="blog-post-title">7. órai tétel</h6>
+						<p>! {B<sub>1</sub>, B<sub>2</sub>,...B<sub>n</sub>} teljes eseményrendszer.<br>! A ε ε eseménytérnek => P(A) = P(A/B<sub>1</sub>) * P(B<sub>2</sub>) + P(A/B<sub>2</sub>) + P(B<sub>2</sub>) +... + P(A/B<sub>n</sub>) * P(B<sub>n</sub>)</p>
+					</div>
+					<div class="alert alert-danger">
+						<h6 class="blog-post-title">Bays-tétel</h6>
+						<p>! {B<sub>1</sub>, B<sub>2</sub>,...B<sub>n</sub>} teljes eseményrendszer.<br>! A ε ε eseménytérnek => P(B<sub>k</sub>/A) = P(A/B<sub>k</sub>) * P(B<sub>k</sub>) / (P(A/B<sub>1</sub>) * P(B<sub>2</sub>) + P(A/B<sub>2</sub>) + P(B<sub>2</sub>) +... + P(A/B<sub>n</sub>) * P(B<sub>n</sub>))</p>
+					</div>
+					<div class="alert alert-danger">
+						<h6 class="blog-post-title">Eloszlásfüggvény</h6>
+						<strong><p>F(x)=P(ξ&ltx)</p></strong>
+					</div>
+				</div>
+			</div>
+			<nav aria-label="Standard pagination example" id="navN">
+				<ul class="pagination">
+					<li class="page-item active tab" data-tab-target="#first"><a class="page-link" href="#">1</a></li>
+					<li class="page-item tab" data-tab-target="#second"><a class="page-link" href="#">2</a></li>
+					<li class="page-item tab" data-tab-target="#third"><a class="page-link" href="#">3</a></li>
+					<li class="page-item tab" data-tab-target="#forth"><a class="page-link" href="#">4</a></li>
+				</ul>
+			</nav>
+		</div>
+		<script>
+			const tabs = document.querySelectorAll('[data-tab-target]')
+			const tabContents = document.querySelectorAll('[data-tab-content]')
+			let list = document.querySelectorAll('#navN ul li');
+
+			tabs.forEach(tab => {
+				tab.addEventListener('click', () => {
+					const target = document.querySelector(tab.dataset.tabTarget)
+					tabContents.forEach(tabContent => {
+						tabContent.classList.remove('active')
+					})
+					target.classList.add('active')
+				})
+			});
+			function activeLink(){
+				list.forEach((item) =>
+				item.classList.remove('active'));
+				this.classList.add('active');
+			}
+					  
+			list.forEach((item) => item.addEventListener('click', activeLink));
+			var modal = document.getElementById("myModal");
+
+			// Get the image and insert it inside the modal - use its "alt" text as a caption
+			var img = document.getElementById("abra");
+			var modalImg = document.getElementById("img01");
+			var captionText = document.getElementById("caption");
+			img.onclick = function(){
+			  modal.style.display = "block";
+			  modalImg.src = this.src;
+			  captionText.innerHTML = this.alt;
+			}
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() { 
+				modal.style.display = "none";
+			}
+		</script>
+	</body>
+</html>

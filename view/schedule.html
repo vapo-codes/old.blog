@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+	<head lang="hu">
+		<link rel="icon" href="../img/vapo.png">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Órarend</title>
+		<link href="../css/style.css" rel="stylesheet" type="text/css" />
+		<link href="../css/timetable.css" rel="stylesheet" type="text/css" />
+		<link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+		<script>
+			function weeksBetween(d) {
+			  let today = new Date();
+			  return Math.round((today - d) / (7 * 24 * 60 * 60 * 1000));
+			}
+
+			function getWeekOfSemester() {
+
+			  const d = new Date(2022, 09, 05)
+			  let day = d.getDay();
+			  let week = weeksBetween(firstDay)
+			  document.getElementById('week').innerHTML = (week+1) + ". hét";
+			  document.getElementById('progress').style.width = (week / 14) * 100 + "%";
+
+			  if (day == 1) {
+				var elements = document.getElementsByClassName('hetfo');
+				for (var i = 0; i < elements.length; i++) {
+				  elements[i].style.backgroundColor = "#cccccc";
+				}
+			  }
+			  else if (day == 2) {
+				var elements = document.getElementsByClassName('kedd');
+				for (var i = 0; i < elements.length; i++) {
+				  elements[i].style.backgroundColor = "#cccccc";
+				}
+			  }
+			  else if (day == 3) {
+				var elements = document.getElementsByClassName('szerda');
+				for (var i = 0; i < elements.length; i++) {
+				  elements[i].style.backgroundColor = "#cccccc";
+				}
+			  }
+			  else if (day == 4) {
+				var elements = document.getElementsByClassName('csutortok');
+				for (var i = 0; i < elements.length; i++) {
+				  elements[i].style.backgroundColor = "#cccccc";
+				}
+			  }
+			  else if (day == 5) {
+				var elements = document.getElementsByClassName('pentek');
+				for (var i = 0; i < elements.length; i++) {
+				  elements[i].style.backgroundColor = "#cccccc";
+				}
+			  }
+			}
+		</script>
+	</head>
+	<body onload="getWeekOfSemester()">
+		<div class="px-3 py-2 bg-dark text-white">
+			<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+				<div class="container">
+					<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+						<span class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+							<blockquote class="blockquote">
+								<div id="citatum464337">
+									<script language="JavaScript" type="text/JavaScript"
+									src="https://www.citatum.hu/nevnapjs.php?async=1&r=464337" async">
+									</script>
+								</div>
+							</blockquote>
+						</span>
+						<span class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+						</span>
+						<ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+							<li>
+								<a href="../index.html" class="nav-link text-white">
+									<img src="../svg/house.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Főoldal
+								</a>
+							</li>
+							<li>
+								<a href="msgboard.html" class="nav-link text-white">
+									<img src="../svg/msg.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Üzenőfal
+								</a>
+							</li>
+							<li>
+								<a href="#" class="nav-link text-secondary" aria-current="page">
+									<img src="../svg/calendar.svg" class="bi d-block mx-auto mb-1" id="menu-icon" width="24"height="24"></img>
+									Órarend
+								</a>
+							</li>
+							<li>
+								<a href="notes.html" class="nav-link text-white">
+									<img src="../svg/note.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Jegyzetek
+								</a>
+							</li>
+							<li>
+								<a href="playlist.html" class="nav-link text-white">
+									<img src="../svg/spotify.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Spotify playlist
+								</a>
+							</li>
+							<li>
+								<a href="https://github.com/solymosi/npu" target="_blank" rel="noopener noreferrer nofollow" class="nav-link text-white">
+									<img src="../svg/powerup.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									PowerUp!
+								</a>
+							</li>
+							<li>
+								<a href="https://drive.google.com/drive/folders/18zKFkxjT7kj2Neu6nV7XDmcroiy_T_m7?usp=sharing" 
+								target="_blank" rel="noopener noreferrer nofollow"class="nav-link text-white">
+									<img src="../svg/drive.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Drive
+								</a>
+							</li>
+							<li>
+								<a href="calc.html" class="nav-link text-white">
+									<img src="../svg/calc.svg" class="bi d-block mx-auto mb-1" width="24" height="24"></img>
+									Kalkulátor
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</header>
+		</div>
+		</br>
+		<div class="container">
+			<div class="progress" style="height: 20px;">
+				<div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"aria-valuemax="100" id="progress">
+					<strong>
+						<div id="week"></div>
+					</strong>
+				</div>
+			</div>
+			<div class="table-responsive">
+				<table class="table table-bordered text-center">
+					<thead>
+						<tr class="bg-light-gray">
+							<th class="text-uppercase">Időpont
+							</th>
+							<th class="text-uppercase hetfo">Hétfő</th>
+							<th class="text-uppercase kedd">Kedd</th>
+							<th class="text-uppercase szerda">Szerda</th>
+							<th class="text-uppercase csutortok">Csütörtök</th>
+							<th class="text-uppercase pentek">Péntek</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="align-middle">08:00</td>
+							<td class="bg-success hetfo">
+								<strong>
+									<span class="padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13">Számításelmélet</span>
+									<div class="margin-10px-top font-size14">08:00-10:00</div>
+									<div class="font-size13">ONLINE</div>
+									<div class="font-size13">Dr. Dömösi Pál Béla</div>
+								</strong>
+							</td>
+							<td class="bg-light-gray kedd">
+							
+							</td>
+							<td class="bg-light-gray szerda">
+							
+							</td>
+							<td class="csutortok">
+							
+							</td>
+							<td class="bg-light-gray pentek">
+							
+							</td>
+						</tr>
+						<tr>
+							<td class="align-middle">09:00</td>
+							<td class="hetfo bg-success">
+							
+							</td>
+							<td class="kedd bg-light-gray">
+						  
+							</td>
+							<td class="szerda bg-light-gray">
+								
+							</td>
+							<td class="bg-light-gray csutortok">
+
+							</td>
+							<td class="bg-light-gray pentek">
+
+							</td>
+						</tr>
+						<tr>
+							<td class="align-middle">10:00</td>
+							<td class="bg-info hetfo">
+								<strong>
+									<span class="padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13">Fordítóprogramok</span>
+									<div class="margin-10px-top font-size14">10:00-13:00</div>
+									<div class="font-size13">ONLINE</div>
+									<div class="font-size13">Dr. Dömösi Pál Béla</div>  
+								</strong>
+							</td>
+							<td class="bg-light-gray kedd">
+
+							</td>
+							<td class="bg-light-gray szerda bg-success">
+								<strong>
+									<span class="padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Játékelmélet (elmélet)</span>       
+									<div class="margin-10px-top font-size14">10:00-11:00</div>
+									<div class="font-size13">B.II.248/a</div>
+									<div class="font-size13">Grünwald Richárd</div>
+								</strong>
+							</td>
+							<td class="csutortok bg-warning">
+								<strong>
+									<span class="padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Mesterséges intelligencia (elmélet)</span>       
+									<div class="margin-10px-top font-size14">10:00-12:00</div>
+									<div class="font-size13">B.II.225</div>
+									<div class="font-size13">Vályi Sándor Zoltán</div>
+								</strong>
+							</td>
+							<td class="bg-danger pentek">
+								<strong>
+									<span class="padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Informatikai jogi és vállakozási ismeretek</span>       
+									<div class="margin-10px-top font-size14">10:00-12:00</div>
+									<div class="font-size13">ONLINE</div>
+									<div class="font-size13">Dr. Kerényi Gábor</div>
+								</strong>
+							</td>
+						</tr>
+						<tr>
+							<td class="align-middle">11:00</td>
+							<td class="hetfo bg-info">
+							
+							</td>
+							<td class="bg-light-gray kedd">
+
+							</td>
+							<td class="szerda bg-danger">
+								<strong>
+									<span class="padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Játékelmélet (gyakorlat)</span>       
+									<div class="margin-10px-top font-size14">11:00-13:00</div>
+									<div class="font-size13">B.II.248/a</div>
+									<div class="font-size13">Grünwald Richárd</div>
+								</strong>
+							</td>
+							<td class="bg-warning csutortok">
+
+							</td>
+							<td class="bg-danger pentek">
+
+							</td>
+						</tr>
+						<tr>
+							<td class="align-middle">12:00</td>
+							<td class="bg-info hetfo">
+
+							</td>
+							<td class="bg-light-gray kedd">
+
+							</td>
+							<td class="bg-danger szerda bg-info">
+
+							</td>
+							<td class="csutortok bg-info">
+								<strong>
+									<span class="padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Mesterséges intelligencia (gyakorlat)</span>       
+									<div class="margin-10px-top font-size14">12:00-14:00</div>
+									<div class="font-size13">B.II.225</div>
+									<div class="font-size13">Vályi Sándor Zoltán</div>
+								</strong>
+							</td>
+							<td class="bg-light-gray pentek">
+
+							</td>
+						</tr>
+						<tr>
+							<td class="align-middle">13:00</td>
+							<td class="hetfo bg-light-gray">
+							
+							</td>
+							<td class="bg-light-gray kedd">
+
+							</td>
+							<td class="szerda bg-light-gray">
+							
+							</td>
+							<td class="bg-info csutortok">
+
+							</td>
+							<td class="bg-light-gray pentek">
+
+							</td>
+						</tr>
+						<tr>
+							<td class="align-middle">14:00</td>
+							<td class="bg-light-gray hetfo">
+
+							</td>
+							<td class="bg-light-gray kedd">
+
+							</td>
+							<td class="bg-light-gray szerda bg-light-gray">
+
+							</td>
+							<td class="bg-light-gray csutortok">
+
+							</td>
+							<td class="bg-light-gray pentek">
+
+							</td>
+						</tr>
+						<tr>
+							<td class="align-middle">15:00</td>
+							<td class="bg-light-gray hetfo">
+
+							</td>
+							<td class="bg-light-gray kedd">
+
+							</td>
+							<td class="szerda" style="background: linear-gradient(to top, #0D6EFD 25%, white 0%);">
+								<strong>
+									<span class="padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16  xs-font-size13">Web-alkalmazás-fejlesztés</span>       
+									<div class="margin-10px-top font-size14">15:45-18:00</div>
+									<div class="font-size13">ONLINE</div>
+									<div class="font-size13">Vályi Sándor Zoltán</div>
+								</strong>
+							</td>
+							<td class="bg-light-gray csutortok">
+
+							</td>
+							<td class="bg-light-gray pentek">
+
+							</td>
+						</tr>
+						<tr>
+							<td class="align-middle">16:00</td>
+							<td class="bg-light-gray hetfo">
+							
+							</td>
+							<td class="bg-light-gray kedd bg-danger">
+								<strong>
+									<span class="padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Informatikai biztonság</span>
+									<div class="margin-10px-top font-size14">16:00-19:00</div>
+									<div class="font-size13">B.II.247/a</div>
+									<div class="font-size13">Andrikó Imre</div>
+								</strong>
+							</td>
+							<td class="szerda bg-primary">
+							
+							</td>
+							<td class="bg-light-gray csutortok">
+							
+							</td>
+							<td class="bg-light-gray pentek">
+
+							</td>
+						</tr>                                            
+					</tbody>
+				</table>
+			</div>
+    <!--<div class="hidden-phone responsive-iframe-container">
+      <iframe
+        src="https://calendar.google.com/calendar/embed?src=fvl55el7ef7c47kco39ite3t0s%40group.calendar.google.com&ctz=Europe%2FBudapest"
+        style="border-width:0" width="100%" height="650" frameborder="0" scrolling="no"></iframe>
+    </div>
+
+    <div class="visible-phone">
+      <iframe
+        src="https://calendar.google.com/calendar/embed?src=fvl55el7ef7c47kco39ite3t0s%40group.calendar.google.com&ctz=Europe%2FBudapest"
+        style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>-->
+		</div>
+		<center>
+			<!--<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Thats_all_folks.svg/2560px-Thats_all_folks.svg.png" style="width:75%"/>-->
+		</center>
+	</body>
+</html>

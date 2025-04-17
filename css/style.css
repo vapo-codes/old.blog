@@ -1,0 +1,380 @@
+#menu-icon{
+  filter: invert(42%) sepia(7%) saturate(427%) hue-rotate(22deg) brightness(97%) contrast(92%);
+}
+
+#card{
+  text-decoration: none;
+  color: black;
+}
+
+.wrapper{
+  display: flex;
+  padding-top: 50px;
+  justify-content: center;  
+}
+
+.collapsible{
+  overflow: hidden;
+  font_weight: 500;
+  width: 65%;
+}
+
+.collapsible input{
+  display: none;
+}
+
+.collapsible label{
+  background-color: rgb(230, 230, 230);
+  position: relative;
+  font-weight: 600;
+  text-indent: 10px;
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,.1), 0 4px  11px 0 rgba(0,0,0,.08);
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+  padding: 15px 0;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.collapsible label:after {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  width: 18px;
+  height: 18px;
+  background: url("../img/arrow.png" no-repeat 0 0);
+  transition: all 0.3s ease;
+}
+
+.collapsible input:checked + label:after {
+  transform: rotate(90deg);
+}
+
+.collapsible-text{
+  max-height: 1px;
+  overflow: hidden;
+  border-radius: 4px;
+  line-height: 1.4;
+  position: relative;
+  top: -100%;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.collapsible input:checked ~ .collapsible-text{
+  max-height: 100%;
+  padding-bottom: 25px;
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,.1), 0 4px  11px 0 rgba(0,0,0,.08);
+  opacity: 1;
+  top: 0;
+}
+
+#week{
+  text-align: right;
+  margin-right: 2%;
+}
+
+::-webkit-scrollbar
+{
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgb(50,50,50);
+}
+
+section{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #1DB954;
+}
+
+section .wave{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("../img/wave_dark.png");
+  background-size: 1000px 100px;
+}
+
+section .wave1{
+  animation: animate 30s linear infinite;
+  z-index: 1000;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0;
+}
+
+section .wave2{
+  animation: animate2 15s linear infinite;
+  z-index: 999;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom: 10px;
+}
+
+section .wave3{
+  animation: animate 30s linear infinite;
+  z-index: 998;
+  opacity: 0.2;
+  animation-delay: -5s;
+  bottom: 20px;
+}
+
+section .wave4{
+  animation: animate2 15s linear infinite;
+  z-index: 997;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom: 15px;
+}
+
+@keyframes animate{
+  0%
+  {
+    background-position-x: 0;
+  }
+  100%
+  {
+    background-position-x: 1000px;
+  }
+}
+
+@keyframes animate2{
+  0%
+  {
+    background-position-x: 0;
+  }
+  100%
+  {
+    background-position-x: -1000px;
+  }
+}
+
+[data-tab-content]{
+  display: none;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 1250px;
+}
+
+#abra {
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,.1), 0 4px  11px 0 rgba(0,0,0,.08);
+  margin-bottom: 15px;
+}
+
+#abra:hover {
+  cursor: pointer;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 1250px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+#navN, #first, #second, #third {
+  margin-top: 15px;
+}
+
+.home-page-color {
+  background-color: rgb(33,37,41);
+}
+
+.logo {
+  position: relative;
+  display: block;
+  stroke: #52ebff;
+  stroke-width: 20px;
+  fill: transparent;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  color: #fff;
+  filter: drop-shadow(0px 0px 3px #0000ff);
+}
+
+.box {
+  text-align: center;
+  font-size: 72px; 
+  color: #52ebff;
+  text-shadow: 1px 0px 3px #0000ff;
+}
+
+#time {
+  display: flex;
+  gap: 40px;
+  color: #52ebff;
+  justify-content: center;
+  align-items: center;
+}
+
+#time .circle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#time .circle svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform: rotate(270deg);
+}
+
+#time .circle svg circle{
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke: #191919;
+  stroke-width: 4;
+  transform: translate(5px, 5px);
+}
+
+#time .circle svg circle:nth-child(2) {
+  stroke: var(--clr);
+  stroke-dasharray: 440;
+}
+
+#time div {
+  position: absolute;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.8em;
+}
+
+#time div span {
+  position: absolute;
+  transform: translateX(-50%) translateY(-10px);
+  font-size: 0.35em;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+
+.dots::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  width: 15px;
+  height: 15px;
+  background: var(--clr);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
+}
+
+@media (max-width: 550px) {
+   .big-container {
+       display: none;
+   }
+}
+@media (min-width: 550px) {
+   .small-container {
+       display: none;
+   }
+}
+/* Responsive iFrame */
+.responsive-iframe-container {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 30px;
+height: 0;
+overflow: hidden;
+}
+
+.responsive-iframe-container iframe,
+.vresponsive-iframe-container object,
+.vresponsive-iframe-container embed {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
